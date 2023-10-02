@@ -5,6 +5,19 @@ function searchLocation(){
 
 const apiKey ="002b1bad348e4d4286945422230110";
 
+getLocation();
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+    fetchWeatherData(position.coords.latitude+","+position.coords.longitude);
+}
+
 function fetchWeatherData(location) {
     let icon = document.getElementById("icon");
     let temp_c = document.getElementById("tempText");
@@ -12,7 +25,7 @@ function fetchWeatherData(location) {
     let locatxt = document.getElementById("locatxt");
     $.ajax({
       method: "GET",
-      url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} =no&aqi`,
+      url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`,
       success: (data) => {
         console.log(data);
         // countryP.text(data["location"]["country"]);
