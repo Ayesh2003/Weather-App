@@ -9,9 +9,10 @@ function fetchWeatherData(location) {
     let icon = document.getElementById("icon");
     let temp_c = document.getElementById("tempText");
     let weatherCastTxt = document.getElementById("weatherCastTxt");
+    let locatxt = document.getElementById("locatxt");
     $.ajax({
       method: "GET",
-      url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} &aqi=no`,
+      url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} =no&aqi`,
       success: (data) => {
         console.log(data);
         // countryP.text(data["location"]["country"]);
@@ -19,7 +20,7 @@ function fetchWeatherData(location) {
         // latP.text(data["location"]["lat"]);
         // lonP.text(data["location"]["lon"]);
         // nameP.text(data["location"]["name"]);
-        // regionP.text(data["location"]["region"]);
+        locatxt.innerHTML=(data["location"]["region"]);
         weatherCastTxt.innerHTML=(data["current"]["condition"]["text"]);
         // humidity.text(data["current"]["humidity"]);
         // tz_id.text(data["location"]["tz_id"]);
