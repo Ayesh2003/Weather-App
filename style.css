@@ -27,8 +27,35 @@
         margin-left: 70px;
         margin-top: 10px;
     }
+    .forcast{
+        margin-left: 158px;
+        margin-bottom: 25px;
+        font-size: 40px;
+        
 
 
+    }
+    .nav1{
+        color: #fff;
+    }
+    .nav2{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 14px;
+        margin-top: 5px;
+    }
+    .nav3{
+        color: #fff;
+        text-decoration: none;
+        margin-left: 25px;
+        margin-right: 14px;
+        margin-top: 5px;
+    }
+
+.windl {
+    margin-left: 51px;
+    margin-top: -39px;
+}
 
 
     

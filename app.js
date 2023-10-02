@@ -23,6 +23,9 @@ function fetchWeatherData(location) {
     let temp_c = document.getElementById("tempText");
     let weatherCastTxt = document.getElementById("weatherCastTxt");
     let locatxt = document.getElementById("locatxt");
+    let city = document.getElementById("city");
+    let wind = document.getElementById("wind");
+
     $.ajax({
       method: "GET",
       url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`,
@@ -31,8 +34,8 @@ function fetchWeatherData(location) {
         // countryP.text(data["location"]["country"]);
         temp_c.innerHTML=(data["current"]["temp_c"] + "°C");
         // latP.text(data["location"]["lat"]);
-        // lonP.text(data["location"]["lon"]);
-        // nameP.text(data["location"]["name"]);
+        wind.innerHTML = (data["current"]["wind_kph"]+"km/h")
+        city.innerHTML=(data["location"]["name"])
         locatxt.innerHTML=(data["location"]["region"]);
         weatherCastTxt.innerHTML=(data["current"]["condition"]["text"]);
         // humidity.text(data["current"]["humidity"]);
