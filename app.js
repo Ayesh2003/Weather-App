@@ -12,7 +12,7 @@ function fetchWeatherData(location) {
     let locatxt = document.getElementById("locatxt");
     $.ajax({
       method: "GET",
-      url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} =no&aqi`,
+      url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} =no&aqi`,
       success: (data) => {
         console.log(data);
         // countryP.text(data["location"]["country"]);
